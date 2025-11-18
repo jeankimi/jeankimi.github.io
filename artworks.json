@@ -2,34 +2,54 @@
     {
         "id": 1,
         "title": "Miyoshi",
-        "thumbnail": "https://via.placeholder.com/400x400/E8E8E8/999999?text=Ming",
-        "fullImage": "https://via.placeholder.com/1200x1200/E8E8E8/999999?text=Ming+HD",
-        "tags": ["cat", "cute", "orange", "animal"],
+        "image": "https://via.placeholder.com/1200x1200/E8E8E8/999999?text=Miyo",
+        "tags": ["cat", "fat", "pokadot"],
         "products": [
-            { "name": "Acrylic Keychain", "price": "NT$ 150" },
-            { "name": "Mug", "price": "NT$ 280" }
+            { 
+                "name": "Acrylic Keychain", 
+                "price": "USD$ 150",
+                "link": "https://example.com/shop/keychain-miyo"
+            },
+            { 
+                "name": "Mug", 
+                "price": "NT$ 280",
+                "link": "https://example.com/shop/mug-miyo"
+            }
         ]
     },
     {
         "id": 2,
         "title": "Midi",
-        "thumbnail": "https://via.placeholder.com/400x400/D8D8D8/999999?text=Hua",
-        "fullImage": "https://via.placeholder.com/1200x1200/D8D8D8/999999?text=Hua+HD",
-        "tags": ["dog", "playful", "blue", "animal"],
+        "image": "https://via.placeholder.com/1200x1200/D8D8D8/999999?text=Midi",
+        "tags": ["cat", "bigeyes", "cute", "playful"],
         "products": [
-            { "name": "Canvas Tote", "price": "NT$ 350" },
-            { "name": "Sticker Set", "price": "NT$ 120" }
+            { 
+                "name": "Canvas Tote", 
+                "price": "NT$ 350",
+                "link": "https://example.com/shop/tote-midi"
+            },
+            { 
+                "name": "Sticker Set", 
+                "price": "NT$ 120"
+            }
         ]
     },
     {
         "id": 3,
         "title": "Mika",
-        "thumbnail": "https://via.placeholder.com/400x400/F0F0F0/999999?text=Mei",
-        "fullImage": "https://via.placeholder.com/1200x1200/F0F0F0/999999?text=Mei+HD",
-        "tags": ["rabbit", "gentle", "pink", "animal"],
+        "image": "https://via.placeholder.com/1200x1200/F0F0F0/999999?text=Mika",
+        "tags": ["cat", "lost", "calico", "kindaDumb"],
         "products": [
-            { "name": "Cushion", "price": "NT$ 450" },
-            { "name": "Phone Case", "price": "NT$ 250" }
+            { 
+                "name": "Cushion", 
+                "price": "NT$ 450",
+                "link": "https://example.com/shop/cushion-mika"
+            },
+            { 
+                "name": "Phone Case", 
+                "price": "NT$ 250",
+                "link": "https://example.com/shop/case-mika"
+            }
         ]
     }
 ]
