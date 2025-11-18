@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "title": "Cat Friend - Ming",
+        "title": "Miyoshi",
         "thumbnail": "https://via.placeholder.com/400x400/E8E8E8/999999?text=Ming",
         "fullImage": "https://via.placeholder.com/1200x1200/E8E8E8/999999?text=Ming+HD",
         "tags": ["cat", "cute", "orange", "animal"],
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "title": "Dog Friend - Hua",
+        "title": "Midi",
         "thumbnail": "https://via.placeholder.com/400x400/D8D8D8/999999?text=Hua",
         "fullImage": "https://via.placeholder.com/1200x1200/D8D8D8/999999?text=Hua+HD",
         "tags": ["dog", "playful", "blue", "animal"],
@@ -23,46 +23,13 @@
     },
     {
         "id": 3,
-        "title": "Rabbit Friend - Mei",
+        "title": "Mika",
         "thumbnail": "https://via.placeholder.com/400x400/F0F0F0/999999?text=Mei",
         "fullImage": "https://via.placeholder.com/1200x1200/F0F0F0/999999?text=Mei+HD",
         "tags": ["rabbit", "gentle", "pink", "animal"],
         "products": [
             { "name": "Cushion", "price": "NT$ 450" },
             { "name": "Phone Case", "price": "NT$ 250" }
-        ]
-    },
-    {
-        "id": 4,
-        "title": "Panda Friend - Qiang",
-        "thumbnail": "https://via.placeholder.com/400x400/E0E0E0/999999?text=Qiang",
-        "fullImage": "https://via.placeholder.com/1200x1200/E0E0E0/999999?text=Qiang+HD",
-        "tags": ["panda", "cute", "black-white", "animal"],
-        "products": [
-            { "name": "Notebook", "price": "NT$ 180" },
-            { "name": "Postcard Set", "price": "NT$ 150" }
-        ]
-    },
-    {
-        "id": 5,
-        "title": "Fox Friend - Fang",
-        "thumbnail": "https://via.placeholder.com/400x400/EBEBEB/999999?text=Fang",
-        "fullImage": "https://via.placeholder.com/1200x1200/EBEBEB/999999?text=Fang+HD",
-        "tags": ["fox", "smart", "orange", "animal"],
-        "products": [
-            { "name": "Bookmark", "price": "NT$ 80" },
-            { "name": "File Folder", "price": "NT$ 200" }
-        ]
-    },
-    {
-        "id": 6,
-        "title": "Penguin Friend - Jie",
-        "thumbnail": "https://via.placeholder.com/400x400/DADADA/999999?text=Jie",
-        "fullImage": "https://via.placeholder.com/1200x1200/DADADA/999999?text=Jie+HD",
-        "tags": ["penguin", "cool", "black-white", "animal"],
-        "products": [
-            { "name": "Pin Badge", "price": "NT$ 100" },
-            { "name": "Keyring", "price": "NT$ 130" }
         ]
     }
 ]
