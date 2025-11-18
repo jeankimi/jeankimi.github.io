@@ -1,1 +1,0 @@
-# jeankimi.github.io
