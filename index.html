@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artwork Gallery</title>
+    <title>Hello World. :)</title>
     <style>
         * {
             margin: 0;
@@ -179,6 +179,19 @@
             height: 280px;
             object-fit: cover;
             display: block;
+            background: #f5f5f5;
+        }
+
+        /* Loading placeholder for images */
+        .artwork-card img[loading="lazy"] {
+            background: linear-gradient(90deg, #f0f0f0 25%, #f5f5f5 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
 
         .artwork-info {
@@ -326,6 +339,19 @@
             background: #fafafa;
             border: 1px solid #f0f0f0;
             text-align: left;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .product-item:hover {
+            background: #f5f5f5;
+            border-color: #e0e0e0;
+        }
+
+        .product-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .product-item h4 {
@@ -339,6 +365,13 @@
             color: #666;
             font-size: 0.9em;
             font-weight: 300;
+        }
+
+        .product-link-icon {
+            display: inline-block;
+            margin-left: 5px;
+            color: #999;
+            font-size: 0.85em;
         }
 
         .no-results {
@@ -422,7 +455,7 @@
 <body>
     <!-- Welcome Page -->
     <div id="welcome-page">
-        <h1>Hello World :)</h1>
+        <h1>Hello World. :)</h1>
         <p>「所有知道我的名字的人啊，你們好不好？」<br>「世界是如此的小，我們注定無處可逃。」</p>
         <button class="enter-btn" onclick="enterGallery()">ENTER</button>
     </div>
@@ -430,7 +463,7 @@
     <!-- Gallery Page -->
     <div id="gallery-page">
         <div class="header">
-            <h1>ARTWORKS</h1>
+            <h1>to all my dear friends</h1>
             <div class="search-box">
                 <input type="text" id="search-input" placeholder="Search by keyword">
             </div>
@@ -570,8 +603,11 @@
                 card.className = 'artwork-card';
                 card.onclick = () => openModal(artwork);
                 
+                // Use only one image (fullImage), browser will handle the scaling
+                const imageUrl = artwork.image || artwork.fullImage;
+                
                 card.innerHTML = `
-                    <img src="${artwork.thumbnail}" alt="${artwork.title}">
+                    <img src="${imageUrl}" alt="${artwork.title}" loading="lazy">
                     <div class="artwork-info">
                         <h3>${artwork.title}</h3>
                         <div class="tags">
@@ -627,7 +663,8 @@
 
         function openModal(artwork) {
             currentArtwork = artwork;
-            document.getElementById('modal-image').src = artwork.fullImage;
+            const imageUrl = artwork.image || artwork.fullImage;
+            document.getElementById('modal-image').src = imageUrl;
             document.getElementById('modal-title').textContent = artwork.title;
             
             const tagsContainer = document.getElementById('modal-tags');
@@ -636,12 +673,25 @@
             ).join('');
             
             const productsContainer = document.getElementById('products-list');
-            productsContainer.innerHTML = artwork.products.map(product => `
-                <div class="product-item">
-                    <h4>${product.name}</h4>
-                    <p>${product.price}</p>
-                </div>
-            `).join('');
+            productsContainer.innerHTML = artwork.products.map(product => {
+                if (product.link) {
+                    return `
+                        <div class="product-item">
+                            <a href="${product.link}" target="_blank" rel="noopener noreferrer">
+                                <h4>${product.name}<span class="product-link-icon">↗</span></h4>
+                                <p>${product.price}</p>
+                            </a>
+                        </div>
+                    `;
+                } else {
+                    return `
+                        <div class="product-item" style="cursor: default;">
+                            <h4>${product.name}</h4>
+                            <p>${product.price}</p>
+                        </div>
+                    `;
+                }
+            }).join('');
             
             document.getElementById('products-section').style.display = 'none';
             document.getElementById('modal').style.display = 'block';
@@ -656,8 +706,9 @@
 
         function downloadImage() {
             if (currentArtwork) {
+                const imageUrl = currentArtwork.image || currentArtwork.fullImage;
                 const link = document.createElement('a');
-                link.href = currentArtwork.fullImage;
+                link.href = imageUrl;
                 link.download = currentArtwork.title + '.png';
                 link.click();
             }
